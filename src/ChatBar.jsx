@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class ChatBar extends Component {
   render() {
@@ -18,4 +19,7 @@ class ChatBar extends Component {
   }
 }
 
+ChatBar.propTypes = {
+  currentUser: PropTypes.string
+};
 export default ChatBar;

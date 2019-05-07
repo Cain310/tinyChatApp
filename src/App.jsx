@@ -9,12 +9,31 @@ class App extends Component {
       currentUser: { name: "?" }, // optional. if currentUser is not defined, it means the user is Anonymous
       messages: [
         {
-          username: "Mike",
+          id: 1,
+          username: "Jon",
           content: "Has anyone seen my marbles?"
         },
         {
-          username: "Anonymous",
+          id: 2,
+          username: "Bran",
           content: "No, I HAVE NOTTTT!!!!."
+        },
+        {
+          id: 3,
+          content:
+            "I won't be impressed with technology until I can download food.",
+          username: "Sam"
+        },
+        {
+          id: 4,
+          username: "Sansa",
+          content: "Anonymous1 changed their name to nomnom"
+        },
+        {
+          id: 5,
+          username: "Tyrion",
+          content:
+            "I wouldn't want to download Kraft Dinner. I'd be scared of cheese packet loss."
         }
       ]
     };
@@ -22,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <MessageList />
+        <MessageList messages={this.state.messages} />
         <ChatBar currentUser={this.state.currentUser.name} />
       </div>
     );
