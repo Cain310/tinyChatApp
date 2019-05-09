@@ -5,8 +5,8 @@ h1 {
 body {
   background: #d2c29d;
   color: black;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-family: "Concert One", cursive;
+  font-size: 16px;
   margin: 70px 0;
 }
 
@@ -23,20 +23,23 @@ body {
 
 .chatbar-message,
 .chatbar-username {
+  font-size: 15px;
   border: 1px solid black;
   display: block;
   height: 40px;
   line-height: 40px;
   margin: 5px;
-  padding: 0 9px;
+  padding: 0 6px 0;
 }
 
 .chatbar-message {
   flex: 8;
+  font: initial;
 }
 
 .chatbar-username {
   flex: 2;
+  font: initial;
 }
 
 .message {
@@ -51,9 +54,9 @@ body {
 
 .message-content,
 .message-username {
-  overflow: hidden;
   margin: 5px;
-  padding: 0 10px;
+  padding: 0 10px 0;
+  line-height: normal;
 }
 
 .message-content {
@@ -62,7 +65,7 @@ body {
 
 .message-username {
   flex: 2;
-  font-weight: 700;
+  font-weight: 725;
 }
 
 .navbar {
@@ -70,7 +73,6 @@ body {
   border-bottom: 1px solid black;
   height: 60px;
   left: 0;
-  padding: 0 10px;
   position: fixed;
   right: 0;
   top: 0;
@@ -86,4 +88,19 @@ body {
   line-height: 60px;
   padding: 0 10px;
   text-decoration: none;
+}
+
+.navbar-users {
+  padding-left: 7px;
+  line-height: 65px;
+  display: block;
+  float: left;
+}
+
+.logo {
+  height: 73px;
+
+  width: 85px;
+
+  float: left;
 }
