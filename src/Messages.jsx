@@ -4,7 +4,9 @@ class Messages extends Component {
   render() {
     return this.props.username ? (
       <div className="message">
-        <span className="message-username">{this.props.username}</span>
+        <span style={{ color: this.props.color }} className="message-username">
+          {this.props.username}
+        </span>
         <span className="message-content">{this.props.content}</span>
       </div>
     ) : (

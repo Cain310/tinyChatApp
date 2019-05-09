@@ -1,7 +1,7 @@
 const express = require("express");
 const SocketServer = require("ws").Server;
 const uuid = require("uuid/v1");
-
+const randomColor = require("randomcolor");
 // Set the port to 3001
 const PORT = 3001;
 
@@ -27,7 +27,7 @@ wss.on("connection", ws => {
       client.send(JSON.stringify(msg));
     });
   };
-
+  let clientColor = randomColor();
   // Send the number of clients
   wss.broadcast(wss.clients.size);
 
@@ -48,7 +48,7 @@ wss.on("connection", ws => {
         }
         message.id = uuid();
         message.type = "incomingMessage";
-
+        message.color = clientColor;
         wss.broadcast(message);
         break;
       case "postNotification":

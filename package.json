@@ -20,7 +20,7 @@
     "live",
     "edit"
   ],
-  "author": "Noah-Jerome Lotzer <n.lotzer@neusta.de>",
+  "author": "Michael Cain",
   "engines": {
     "node": ">=6.0.0"
   },
