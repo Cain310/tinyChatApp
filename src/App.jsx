@@ -21,14 +21,12 @@ class App extends Component {
 
     this.socket.onmessage = event => {
       const receivedMessage = JSON.parse(event.data);
-
       if (Number.isInteger(receivedMessage)) {
         const onlineUsers = receivedMessage;
         this.setState({ onlineUsers });
       } else {
         const oldMessages = this.state.messages;
         const newMessages = [...oldMessages, receivedMessage];
-
         switch (receivedMessage.type) {
           case "incomingMessage":
             this.setState({ messages: newMessages });
@@ -45,12 +43,10 @@ class App extends Component {
 
   addMessage(username, content) {
     let currentUser = this.state.currentUser.name;
-
     // Initial state of currentUser is a null name. Sets local variable for next conditional statement.
     if (currentUser === null) {
       currentUser = "Anonymous";
     }
-
     // Sends notification if different currentUser than in this.state.
     if (currentUser !== username) {
       const notification = {
@@ -58,7 +54,6 @@ class App extends Component {
         content: `${currentUser} has changed their name to ${username}.`
       };
       this.socket.send(JSON.stringify(notification));
-
       // User's message
       const newData = {
         type: "postMessage",
@@ -74,7 +69,6 @@ class App extends Component {
         username: username,
         content: content
       };
-
       this.socket.send(JSON.stringify(newData));
     }
   }
@@ -94,7 +88,6 @@ class App extends Component {
             {this.state.onlineUsers} Users Online
           </div>
         </nav>
-
         <div className="messages">
           <MessageList messages={this.state.messages} />
           <ChatBar

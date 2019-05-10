@@ -16,12 +16,10 @@ class ChatBar extends Component {
       const content = event.target.value;
       let username = this.state.newUser;
       console.log(username);
-
       // Set default username to Anonymous if there is no input in the username
       if (username === "") {
         username = "Anonymous";
       }
-
       this.props.chatData(username, content);
       event.target.value = "";
     }
