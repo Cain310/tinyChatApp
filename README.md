@@ -5,8 +5,8 @@ chatApp is a client-side single-page application that allows multiple users to c
 ### Usage
 
 ```
-git clone git@github.com:lighthouse-labs/react-simple-boilerplate.git
-cd react-simple-boilerplate
+git clone git@github.com:Cain310/tinyChatApp.git
+cd tinyChattApp2
 git remote rm origin
 git remote add origin [YOUR NEW REPOSITORY]
 # Manually update your package.json file
