@@ -18,65 +18,17 @@ new WebpackDevServer(webpack(config), {
   console.log("Running at http://0.0.0.0:3000");
 });
 
-// const express = require("express");
-// const SocketServer = require("ws").Server;
-// const uuid = require("uuid/v1");
+const express = require("express");
+const path = require("path");
+const port = process.env.PORT || 8080;
+const app = express();
 
-// // Set the port to 3001
-// const PORT = 3001;
+// the __dirname is the current directory from where the script is running
+app.use(express.static(__dirname));
 
-// // Create a new express server
-// const server = express()
-//   // Make the express server serve static assets (html, javascript, css) from the /public folder
-//   .use(express.static("public"))
-//   .listen(PORT, "0.0.0.0", "localhost", () =>
-//     console.log(`Listening on ${PORT}`)
-//   );
+// send the user to index html page inspite of the url
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "index.html"));
+});
 
-// // Create the WebSockets server
-// const wss = new SocketServer({ server });
-// // const clients = [];
-
-// // Set up a callback that will run when a client connects to the server
-// // When a client connects they are assigned a socket, represented by
-// // the ws parameter in the callback.
-// wss.on("connection", ws => {
-//   // clients.push(ws);
-
-//   console.log("Client connected");
-//   console.log(wss.clients.size);
-
-//   wss.broadcast = function broadcast(msg) {
-//     wss.clients.forEach(function each(client) {
-//       client.send(JSON.stringify(msg));
-//     });
-//   };
-
-//   wss.broadcast(wss.clients.size);
-
-//   ws.on("message", function incoming(clientMessage) {
-//     const message = JSON.parse(clientMessage);
-//     console.log(message);
-//     switch (message.type) {
-//       case "postMessage":
-//         if (!message.username) {
-//           message.username = "Anonymous";
-//         }
-//         message.id = uuid();
-//         message.type = "incomingMessage";
-//         wss.broadcast(message);
-//         break;
-//       case "postNotification":
-//         message.id = uuid();
-//         message.type = "incomingNotification";
-//         wss.broadcast(message);
-//         break;
-//       default:
-//         throw new Error("Unknown event type " + clientMessage.type);
-//     }
-//   });
-//   ws.on("close", () => {
-//     wss.broadcast(wss.clients.size);
-//     console.log("Client disconnected");
-//   });
-// });
+app.listen(port);

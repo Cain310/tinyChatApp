@@ -27,6 +27,7 @@ wss.on("connection", ws => {
       client.send(JSON.stringify(msg));
     });
   };
+  //npm package that sets random color.
   let clientColor = randomColor();
   // Send the number of clients
   wss.broadcast(wss.clients.size);

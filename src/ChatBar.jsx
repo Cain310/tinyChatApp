@@ -34,8 +34,6 @@ class ChatBar extends Component {
           className="chatbar-username"
           value={this.state.newUser}
           onChange={this.userEntered}
-          // ref="username"
-          // defaultValue={this.props.currentUser}
           placeholder="Your Name (Optional)"
         />
 
@@ -51,53 +49,3 @@ class ChatBar extends Component {
 }
 
 export default ChatBar;
-
-// import React, { Component } from "react";
-// import PropTypes from "prop-types";
-
-// class ChatBar extends Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-
-//   handleSubmit(event) {
-//     if (event.keyCode === 13) {
-//       event.preventDefault();
-//       const value = event.target.value;
-//       let username = this.refs.username.value;
-//       console.log("HANDLESUBMIT", username);
-//       this.props.getMessage(username, value);
-//       event.target.value = "";
-//       // Set default username to Anonymous if there is no input in the username
-//       if (username === "") {
-//         username = "Anonymous";
-//       }
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <footer className="chatbar">
-//         <input
-//           className="chatbar-username"
-//           placeholder="Your Name (Optional)"
-//           ref="username"
-//           defaultValue={this.props.currentUser}
-//         />
-//         <input
-//           className="chatbar-message"
-//           placeholder="Type a message and press ENTER"
-//           name="message"
-//           onKeyDown={this.handleSubmit}
-//         />
-//       </footer>
-//     );
-//   }
-// }
-
-// ChatBar.propTypes = {
-//   currentUser: PropTypes.string
-// };
-// export default ChatBar;
