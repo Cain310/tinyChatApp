@@ -2,6 +2,9 @@
 
 chatApp is a client-side single-page application that allows multiple users to chat with each other. Users are able to set their username and chat in real-time through through the Websocket server.
 
+![Home Page](https://github.com/Cain310/tinyChatApp/blob/master/docs/ChatApp%20Readme%20pic.png)
+![Home Page](https://github.com/Cain310/tinyChatApp/blob/master/docs/ChatApp%20Readme%20pic2.png)
+
 ### Usage
 
 ```
